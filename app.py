@@ -8,7 +8,7 @@ os.environ['WEB2PY_PATH'] = "/"
 sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py'))
 sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py', 'gluon'))
 
-WEB2PY_LOG = os.path.join(os.environ['OPENSHIFT_LOG_DIR'],'web2py.log')
+WEB2PY_LOG = os.path.join("/", 'web2py.log')
 
 from gluon.settings import global_settings
 import gluon.main
