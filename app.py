@@ -3,13 +3,14 @@
 import os
 import sys
 
-os.environ['WEB2PY_PATH'] = "/opt/app-root/src"
-os.environ["gluon_parent"] = os.path.join(os.environ['WEB2PY_PATH'], 'web2py')
+os.environ['THIS_APP_PATH'] = "/opt/app-root/src"
 
-sys.path.append(os.environ['gluon_parent'])
-sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py', 'gluon'))
+os.environ['web2py_path'] = os.path.join(os.environ['THIS_APP_PATH'], 'web2py')
 
-WEB2PY_LOG = os.path.join("/", 'web2py.log')
+sys.path.append(os.environ['web2py_path'])
+sys.path.append(os.environ['web2py_path'], 'gluon'))
+
+WEB2PY_LOG = os.path.join(os.environ['THIS_APP_PATH'], 'log', 'web2py.log')
 
 from gluon.settings import global_settings
 import gluon.main
