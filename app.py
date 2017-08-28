@@ -4,8 +4,9 @@ import os
 import sys
 
 os.environ['WEB2PY_PATH'] = "/opt/app-root/src"
+os.environ["gluon_parent"] = os.path.join(os.environ['WEB2PY_PATH'], 'web2py')
 
-sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py'))
+sys.path.append(os.environ['gluon_parent'])
 sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py', 'gluon'))
 
 WEB2PY_LOG = os.path.join("/", 'web2py.log')
