@@ -8,7 +8,7 @@ os.environ['THIS_APP_PATH'] = "/opt/app-root/src"
 os.environ['web2py_path'] = os.path.join(os.environ['THIS_APP_PATH'], 'web2py')
 
 sys.path.append(os.environ['web2py_path'])
-sys.path.append(os.environ['web2py_path'], 'gluon'))
+sys.path.append(os.path.join(os.environ['web2py_path'], 'gluon'))
 
 WEB2PY_LOG = os.path.join(os.environ['THIS_APP_PATH'], 'log', 'web2py.log')
 
