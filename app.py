@@ -3,7 +3,7 @@
 import os
 import sys
 
-os.environ['WEB2PY_PATH'] = "/"
+os.environ['WEB2PY_PATH'] = "/opt/app-root/src"
 
 sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py'))
 sys.path.append(os.path.join(os.environ['WEB2PY_PATH'], 'web2py', 'gluon'))
