@@ -7,7 +7,7 @@ setup(name='web2pyhost',
       author_email='example@example.com',
       url='http://www.python.org/sigs/distutils-sig/',
       install_requires=[
-          'gunicorn',
+        #   'gunicorn',
         #   'newrelic','GitPython'
       ],
 )
