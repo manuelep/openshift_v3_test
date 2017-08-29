@@ -1,0 +1,86 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "web2py-example",
+        "annotations": {
+            "openshift.io/display-name": "web2py",
+            "description": "An example web2py application with no database.",
+            "tags": "quickstart,python,web2py",
+            "iconClass": "icon-python",
+            "template.openshift.io/long-description": "This template defines resources needed to develop a web2py based application, including a build configuration and application deployment configuration.  It does not include a database.",
+            "template.openshift.io/provider-display-name": "Red Hat, Inc.",
+            "template.openshift.io/documentation-url": "https://github.com/manuelep/openshift_v3_test",
+            "template.openshift.io/support-url": "https://access.redhat.com"
+        }
+    },
+    "labels": {
+    "template": "web2py-example"
+    },
+    "message": "The following service(s) have been created in your project: ${NAME}.",
+    "objects": [],
+    "parameters": [
+        {
+            "name": "NAME",
+            "displayName": "Name",
+            "description": "The name assigned to all of the frontend objects defined in this template.",
+            "required": true,
+            "value": "web2py-example"
+        },
+        {
+            "name": "NAMESPACE",
+            "displayName": "Namespace",
+            "required": true,
+            "description": "The OpenShift Namespace where the ImageStream resides.",
+            "value": "openshift"
+        },
+        {
+            "name": "MEMORY_LIMIT",
+            "displayName": "Memory Limit",
+            "required": true,
+            "description": "Maximum amount of memory the container can use.",
+            "value": "512Mi"
+        },
+        {
+            "name": "SOURCE_REPOSITORY_URL",
+            "displayName": "Git Repository URL",
+            "required": true,
+            "description": "The URL of the repository with your application source code.",
+            "value": "https://github.com/manuelep/openshift_v3_test.git"
+        },
+        {
+            "name": "SOURCE_REPOSITORY_REF",
+            "displayName": "Git Reference",
+            "description": "Set this to a branch name, tag or other ref of your repository if you are not using the default branch."
+        },
+        {
+            "name": "CONTEXT_DIR",
+            "displayName": "Context Directory",
+            "description": "Set this to the relative path to your project if it is not in the root of your repository."
+        },
+        {
+            "name": "APPLICATION_DOMAIN",
+            "displayName": "Application Hostname",
+            "description": "The exposed hostname that will route to the web2py service, if left blank a value will be defaulted.",
+            "value": ""
+        },
+        {
+            "name": "GITHUB_WEBHOOK_SECRET",
+            "displayName": "GitHub Webhook Secret",
+            "description": "Github trigger secret.  A difficult to guess string encoded as part of the webhook URL.  Not encrypted.",
+            "generate": "expression",
+            "from": "[a-zA-Z0-9]{40}"
+        },
+        {
+            "name": "APP_CONFIG",
+            "displayName": "Application Configuration File Path",
+            "description": "Relative path to Gunicorn configuration file (optional)."
+        },
+        {
+            "name": "PIP_INDEX_URL",
+            "displayName": "Custom PyPi Index URL",
+            "description": "The custom PyPi index URL",
+            "value": ""
+        }
+    ]
+}
